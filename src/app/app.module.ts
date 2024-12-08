@@ -16,6 +16,7 @@ import { IntegrationsComponent } from './components/integrations/integrations.co
 import { CustomersComponent } from './components/customers/customers.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ScrollIntoViewDirective } from './directives/scroll-effect.directive';
 
 @NgModule({
   declarations: [
@@ -29,10 +30,11 @@ import { HomeComponent } from './pages/home/home.component';
     IntegrationsComponent,
     CustomersComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    ScrollIntoViewDirective
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     NgChartsModule,
     FontAwesomeModule,

@@ -1,4 +1,4 @@
-<section id="section-customers" class="section--customers">
+<section id="section-customers" appScrollIntoView class="section--customers fade-in-up">
   <div class="section__container">
     <h4 class="title">What customers are saying</h4>
     <div class="slide__container">
@@ -21,10 +21,10 @@
         </ng-template>
       </swiper>
       <div class="slide-controls">
-        <button (click)="slidePrev()">
+        <button (click)="slidePrev()" name="prev">
           <fa-icon [icon]="faAngleLeft"></fa-icon>
         </button>
-        <button (click)="slideNext()">
+        <button (click)="slideNext()" name="next">
           <fa-icon [icon]="faAngleRight"></fa-icon>
         </button>
       </div>
