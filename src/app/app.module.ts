@@ -17,6 +17,7 @@ import { CustomersComponent } from './components/customers/customers.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ScrollIntoViewDirective } from './directives/scroll-effect.directive';
+import { TimeAgoPipe } from './pipes/time-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ScrollIntoViewDirective } from './directives/scroll-effect.directive';
     CustomersComponent,
     ContactComponent,
     HomeComponent,
-    ScrollIntoViewDirective
+    ScrollIntoViewDirective,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

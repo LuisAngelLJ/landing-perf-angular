@@ -55,33 +55,4 @@ export class CustomersComponent {
     this.swiper?.swiperRef?.slidePrev();
   }
 
-  calcTimeAgo(date: Date): string {
-    const now = new Date();
-
-    // Calcula la diferencia en años, meses y días
-    const yearsDifference = now.getFullYear() - date.getFullYear();
-    const monthsDifference = now.getMonth() - date.getMonth();
-    const daysDifference = now.getDate() - date.getDate();
-
-    // Ajusta el cálculo si no se ha alcanzado el mes o día exacto
-    let adjustedYears = yearsDifference;
-    let adjustedMonths = monthsDifference;
-
-    if (monthsDifference < 0 || (monthsDifference === 0 && daysDifference < 0)) {
-      adjustedYears--; // Resta un año si aún no se cumple el aniversario
-    }
-
-    // Usa RelativeTimeFormat para la salida
-    const formatter = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
-
-    if (adjustedYears >= 1) {
-      return formatter.format(-adjustedYears, 'year');
-    } else if (monthsDifference >= 1 || (monthsDifference === 0 && daysDifference > 0)) {
-      return formatter.format(-adjustedMonths, 'month');
-    } else {
-      const diffInDays = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
-      return formatter.format(-diffInDays, 'day');
-    }
-  }
-
 }
